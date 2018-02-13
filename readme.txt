@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: woocommerce, products, product, non purchasable, non-purchasable, purchasable, add to cart, add to cart button, add-to-cart-button, display only, display only products, remove button, buy, woo, custom, product gallery
 Requires at least: 3.0.1
 Tested up to: 4.9.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ No. The default settings are applied automatically once the plugin is activated,
 
 == Changelog ==
 
+= 1.0.2 =
+* Increased filter priority to avoid potential plugin conflicts.
+
 = 1.0.1 =
 * Fixed minor typos.
 
@@ -58,6 +61,9 @@ No. The default settings are applied automatically once the plugin is activated,
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Minor adjustment.
 
 = 1.0.1 =
 Fixed minor typos.
