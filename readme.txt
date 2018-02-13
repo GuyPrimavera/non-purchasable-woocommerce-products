@@ -1,10 +1,10 @@
 === Non-Purchasable WooCommerce Products ===
 Contributors: GuyPrimavera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YVPWSJB4SPN5N
-Tags: woocommerce, products, product, non purchasable, non-purchasable, purchasable, add to cart, add to cart button, add-to-cart-button, display only, display only products, remove button, buy, woo, custom
+Tags: woocommerce, products, product, non purchasable, non-purchasable, purchasable, add to cart, add to cart button, add-to-cart-button, display only, display only products, remove button, buy, woo, custom, product gallery
 Requires at least: 3.0.1
 Tested up to: 4.9.4
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,11 +12,11 @@ Allow selected WooCommerce products to be non-purchaseable, display-only product
 
 == Description ==
 
-Set certain WooCommerce products to be non-purchasable (display-only).
+Set certain WooCommerce products to be **non-purchasable** (display-only), with a custom message and button text.
 
 **Features**
 
-* Set *is_purchasble* status of products.
+* Set *is_purchasable* status of products.
 * Works with all product types, including variable products.
 * Customise the button text and message on product pages.
 * Disable the message output altogether if desired.
@@ -51,10 +51,16 @@ No. The default settings are applied automatically once the plugin is activated,
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixed minor typos.
+
 = 1.0 =
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Fixed minor typos.
 
 = 1.0 =
 Initial release.
