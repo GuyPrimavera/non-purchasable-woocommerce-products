@@ -5,7 +5,7 @@
  * Description: Allow selected WooCommerce products to be non-purchaseable, display-only products, with a custom message shown to the customer.
  * Author: Guy Primavera
  * Author URI: https://guyprimavera.com/
- * Version: 1.0.1
+ * Version: 1.0.2
  * Text Domain: non-purchasable-woocommerce-products
  * License: GPL2
  *

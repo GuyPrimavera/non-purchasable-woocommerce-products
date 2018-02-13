@@ -2,7 +2,7 @@
 
 // Check if the product is purchasable
 
-add_filter('woocommerce_is_purchasable', 'gp_npwp_set_non_purchasable', 10, 2);
+add_filter('woocommerce_is_purchasable', 'gp_npwp_set_non_purchasable', 99, 2);
 
 function gp_npwp_set_non_purchasable($is_purchasable, $product) {
 
@@ -48,6 +48,8 @@ add_action( 'woocommerce_single_product_summary', 'gp_npwp_custom_message', 30 )
 
 function gp_npwp_custom_message() {
 
+  $cartButtonHide = '<style>form.variations_form .woocommerce-variation-add-to-cart { display:none!important;}</style>';
+
     $not_buyable = get_post_meta( get_the_ID(), '_not_buyable', true );
 
     $newMessageText = get_option( 'gp_npwp_new_message_text' );
@@ -63,7 +65,8 @@ function gp_npwp_custom_message() {
   	if ( $hideMessage !== 'yes' ) {
 
 	    if ( $not_buyable === 'yes' ) {
-	        echo '<div class="woocommerce"><div class="woocommerce-info" style="margin-bottom: 0px;">' . $newMessage . '</div></div>';
+	        echo '<div class="woocommerce"><div class="woocommerce-info" style="margin-bottom: 0px;">' . $newMessage . '</div></div>' . 
+          $cartButtonHide;
 	    }
 
   	}
