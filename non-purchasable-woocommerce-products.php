@@ -2,10 +2,12 @@
 /**
  * Plugin Name: Non-Purchasable WooCommerce Products
  * Plugin URI: https://wordpress.org/plugins/non-purchasable-woocommerce-products/
- * Description: Allow selected WooCommerce products to be non-purchaseable, display-only products, with a custom message shown to the customer.
+ * Description: Allow selected WooCommerce products to be non-purchasable, display-only products, with a custom message shown to the customer.
  * Author: Guy Primavera
  * Author URI: https://guyprimavera.com/
- * Version: 1.0.2
+ * Version: 1.3
+ * WC requires at least: 3.0.0
+ * WC tested up to: 3.5.5
  * Text Domain: non-purchasable-woocommerce-products
  * License: GPL2
  *

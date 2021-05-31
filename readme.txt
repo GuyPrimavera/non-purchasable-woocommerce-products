@@ -3,12 +3,12 @@ Contributors: GuyPrimavera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YVPWSJB4SPN5N
 Tags: woocommerce, products, product, non purchasable, non-purchasable, purchasable, add to cart, add to cart button, add-to-cart-button, display only, display only products, remove button, buy, woo, custom, product gallery
 Requires at least: 3.0.1
-Tested up to: 4.9.4
-Stable tag: 1.0.2
+Tested up to: 5.1
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Allow selected WooCommerce products to be non-purchaseable, display-only products, with a custom message shown to the customer.
+Allow selected WooCommerce products to be non-purchasable, display-only products, with a custom message shown to the customer.
 
 == Description ==
 
@@ -51,6 +51,21 @@ No. The default settings are applied automatically once the plugin is activated,
 
 == Changelog ==
 
+= 1.3 =
+* Added option to display raw HTML output instead of default WooCommerce message wrapper.
+* Added unique class name to front-end message wrapper.
+
+= 1.2 =
+* Moved the in-product checkbox to it's own tab due to issues with variable/grouped products.
+* Added a link to the settings in the product data tab section.
+* Tested with WordPress 4.9.8.
+
+= 1.1 =
+* Added "Purchasable?" column to the "Products" admin screen.
+* Added option on the settings page to hide "Purchasable?" admin column.
+* Fixed a couple of typos (again).
+* Tested with WordPress 4.9.7.
+
 = 1.0.2 =
 * Increased filter priority to avoid potential plugin conflicts.
 
@@ -61,6 +76,19 @@ No. The default settings are applied automatically once the plugin is activated,
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.3 =
+* Added option to hide default WooCommerce wrapper on front-end.
+* Added unique class name to front-end message wrapper.
+
+= 1.2 =
+* Fixed issues with variable/grouped products.
+
+= 1.1 =
+* Added "Purchasable?" column to the "Products" admin screen.
+* Added option on the settings page to hide "Purchasable?" admin column.
+* Fixed a couple of typos (again).
+* Tested with WordPress 4.9.7.
 
 = 1.0.2 =
 Minor adjustment.

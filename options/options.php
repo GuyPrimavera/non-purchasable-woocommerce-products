@@ -50,7 +50,17 @@ function gp_npwp_settings( $settings, $current_section ) {
 			'default'		=> __( 'This item cannot be purchased online.', 'non-purchasable-woocommerce-products' ),
 
 		);
-		
+
+		// Hide the default WooCommerce message wrapper
+		$settings_npwp[] = array(
+
+			'name'     => __( 'Hide the default WooCommerce message wrapper style?', 'non-purchasable-woocommerce-products' ),
+			'desc_tip' => __( 'Hide the default "woocommerce-info" message wrapper and just display the raw HTML in the message box above.', 'non-purchasable-woocommerce-products' ),
+			'id'       => 'gp_npwp_hide_wrapper',
+			'type'     => 'checkbox',
+
+		);
+
 		// Hide the message
 		$settings_npwp[] = array(
 
@@ -60,7 +70,18 @@ function gp_npwp_settings( $settings, $current_section ) {
 
 		);
 		
+		// Hide the "Purchasable" admin column
+		$settings_npwp[] = array(
+
+			'name'     => __( 'Hide the "Purchasable?" admin column?', 'non-purchasable-woocommerce-products' ),
+			'id'       => 'gp_npwp_hide_admin_column',
+			'type'     => 'checkbox',
+
+		);
+		
 		$settings_npwp[] = array( 'type' => 'sectionend', 'id' => 'non-purchasable' );
+
+		//https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YVPWSJB4SPN5N
 
 		return $settings_npwp;
 	
@@ -75,6 +96,5 @@ function gp_npwp_settings( $settings, $current_section ) {
 	}
 
 }
-
 
 ?>
