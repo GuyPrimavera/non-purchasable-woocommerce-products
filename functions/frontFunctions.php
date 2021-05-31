@@ -54,6 +54,7 @@ function gp_npwp_custom_message() {
 
     $newMessageText = get_option( 'gp_npwp_new_message_text' );
     $hideMessage = get_option( 'gp_npwp_hide_message' );
+    $hideWrapper = get_option( 'gp_npwp_hide_wrapper' );
 
   	if ( isset( $newMessageText ) && !empty( $newMessageText ) ) {
     	$newMessage = $newMessageText;
@@ -65,8 +66,13 @@ function gp_npwp_custom_message() {
   	if ( $hideMessage !== 'yes' ) {
 
 	    if ( $not_buyable === 'yes' ) {
-	        echo '<div class="woocommerce"><div class="woocommerce-info" style="margin-bottom: 0px;">' . $newMessage . '</div></div>' . 
-          $cartButtonHide;
+
+        if ( $hideWrapper !== 'yes' ) {
+	        echo '<div class="woocommerce npwpMessage"><div class="woocommerce-info" style="margin-bottom: 0px;">' . $newMessage . '</div></div>' . $cartButtonHide;
+        } else {
+          echo $newMessage . $cartButtonHide;
+        }
+
 	    }
 
   	}
