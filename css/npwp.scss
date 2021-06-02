@@ -1,0 +1,7 @@
+span.woocommerce-help-tip.gp_npwp {
+  margin-top: -2px;
+
+  &::after {
+    content: " "!important;
+  }
+}
