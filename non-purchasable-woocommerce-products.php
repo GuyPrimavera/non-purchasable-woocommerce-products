@@ -15,8 +15,21 @@
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { exit; }
 
-add_action('admin_init', 'require_woocommerce_install');
-function require_woocommerce_install() {
+define('GP_NPWP_PLUGIN_FULL_PATH', __FILE__);
+define('GP_NPWP_PLUGIN_FILE', basename(__FILE__));
+define('GP_NPWP_DOMAIN', 'non-purchasable-woocommerce-products');
+
+$gp_npwp_version = 0;
+
+function gp_npwp_get_plugin_info() {
+  if (function_exists('get_plugins')) {
+    $gp_npwp = get_plugins()[GP_NPWP_DOMAIN . '/' . GP_NPWP_PLUGIN_FILE];
+    $gp_npwp_version = $gp_npwp['Version'];
+  }
+}
+add_action( 'plugins_loaded', 'gp_npwp_get_plugin_info' );
+
+function gp_npwp_require_woocommerce_install() {
   if (is_admin() && current_user_can('activate_plugins') &&  !is_plugin_active('woocommerce/woocommerce.php')) {
     add_action('admin_notices', 'no_woocommerce_notice');
     deactivate_plugins(plugin_basename(__FILE__)); 
@@ -26,24 +39,22 @@ function require_woocommerce_install() {
     }
   }
 }
+add_action('admin_init', 'gp_npwp_require_woocommerce_install');
 
-function no_woocommerce_notice(){
+function no_woocommerce_notice() {
   echo '<div class="error"><p>Non-Purchasable WooCommerce Products requires <a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce</a> to be installed and active to function.</p></div>';
 }
 
-include ('functions/adminFunctions.php');
-include ('functions/frontFunctions.php');
+include ('functions/helper.php');
+include ('functions/admin.php');
+include ('functions/front.php');
 include ('options/options.php');
 
 // Plugin action links
-add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'gp_npwp_action_links');
-
-// TODO: Purchasable column in products table 
-// TODO: WPML string translation
-// TODO: Currencyswitcher hide price
-// TODO: Hide stock status option
-// TODO: Option to reverse how it works?
-// TODO: Test and update for latest WC versions
-// TODO: Elementor: https://wordpress.org/support/topic/no-display-with-elementor-product-template-2/
-// TODO: Shortcode for list of non-purch products
-
+function gp_npwp_load_meta_links() {
+  if (is_plugin_active(GP_NPWP_DOMAIN . '/' . GP_NPWP_PLUGIN_FILE)) {
+    add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'gp_npwp_action_links');
+    add_filter('plugin_row_meta', 'np_npwp_row_meta', 10, 2);
+  }
+}
+add_action('admin_init', 'gp_npwp_load_meta_links');

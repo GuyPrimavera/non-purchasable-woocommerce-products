@@ -16,7 +16,12 @@ function gp_npwp_settings($settings, $current_section) {
 		$settings_npwp = array();
 
 		// Add Title to the Settings
-		$settings_npwp[] = array('name' => __('Non-Purchasable Products', 'non-purchasable-woocommerce-products'), 'type' => 'title', 'desc' => __('Configure the global options for non-purchasable products.', 'non-purchasable-woocommerce-products'), 'id' => 'non-purchasable');
+		$settings_npwp[] = array(
+			'name' => __('Non-Purchasable Products', 'non-purchasable-woocommerce-products'), 
+			'type' => 'title', 
+			'desc' => __('Configure the global options for non-purchasable products.', 'non-purchasable-woocommerce-products'), 
+			'id' => 'non-purchasable'
+		);
 
 		// Set button text
 		$settings_npwp[] = array(
@@ -51,18 +56,19 @@ function gp_npwp_settings($settings, $current_section) {
 			'type' => 'checkbox',
 		);
 		
-		// Hide the "Purchasable" admin column
+		// Hide the "Purchasable" icon in product table
 		$settings_npwp[] = array(
-			'name' => __('Hide the "Purchasable?" admin column?', 'non-purchasable-woocommerce-products'),
+			'name' => __('Hide the "purchasable" icon in the admin product table?', 'non-purchasable-woocommerce-products'),
 			'id' => 'gp_npwp_hide_admin_column',
 			'type' => 'checkbox',
 		);
 		
-		$settings_npwp[] = array('type' => 'sectionend', 'id' => 'non-purchasable');
-		return $settings_npwp;
-	
-	// If not, return the standard settings
+		$settings_npwp[] = array(
+			'type' => 'sectionend', 
+			'id' => 'non-purchasable'
+		);
 
+		return $settings_npwp;
 	} else {
 		return $settings;
 	}

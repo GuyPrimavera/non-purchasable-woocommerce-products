@@ -54,6 +54,9 @@ No. The default settings are applied automatically once the plugin is activated,
 = 1.4 =
 * Refactor.
 * Bug fixes.
+* Admin product table column removed.
+* Icon added to admin product table.
+* Tested with latest version of WooCommerce.
 
 = 1.3 =
 * Added option to display raw HTML output instead of default WooCommerce message wrapper.
@@ -84,6 +87,9 @@ No. The default settings are applied automatically once the plugin is activated,
 = 1.4 =
 * Refactor.
 * Bug fixes.
+* Admin product table column removed.
+* Icon added to admin product table.
+* Tested with latest version of WooCommerce.
 
 = 1.3 =
 * Added option to hide default WooCommerce wrapper on front-end.
